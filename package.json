@@ -4,8 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1", 
-    "webpack": "webpack --mode=development --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --mode=development --watch",
     "build": "webpack"
   },
   "keywords": [],
@@ -16,6 +16,7 @@
     "webpack-cli": "^3.3.6"
   },
   "dependencies": {
+    "jshint": "^2.10.2",
     "lodash": "^4.17.15"
   }
 }
