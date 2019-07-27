@@ -119,6 +119,17 @@ eval("module.exports = function(module) {\n\tif (!module.webpackPolyfill) {\n\t\
 
 /***/ }),
 
+/***/ "./src/icicle.js":
+/*!***********************!*\
+  !*** ./src/icicle.js ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected keyword 'const' (13:2)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| \\n| chart = {\\n>   const root = partition(data);\\n|   let focus = root;\\n| \");\n\n//# sourceURL=webpack:///./src/icicle.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -127,7 +138,7 @@ eval("module.exports = function(module) {\n\tif (!module.webpackPolyfill) {\n\t\
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n\n\n// webpack setup\n// function component() {\n//   const element = document.createElement('div');\n\n//   // Lodash, currently included via a script, is required for this line to work\n//   element.innerHTML = _.join(['Hello', 'webpack'], ' ');\n\n//   return element;\n// }\n\n// document.body.appendChild(component());\n\n\ndocument.addEventListener('DOMContentLoaded', () => {\n});\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _icicle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icicle */ \"./src/icicle.js\");\n/* harmony import */ var _icicle__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_icicle__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  document.getElementById('chart');\n});\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
