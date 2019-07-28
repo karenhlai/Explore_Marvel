@@ -1,8 +1,8 @@
-data = require('./data.json');
-color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1));
-format = d3.format(",d");
-width = 975;
-height = 1200;
+// data = require('./data.json');
+// color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1));
+// format = d3.format(",d");
+// width = 975;
+// height = 1200;
 
 partition = data => {
   const root = d3.hierarchy(data)
@@ -21,7 +21,6 @@ chart = () => {
   .attr("viewBox", [0, 0, width, height])
   .style("font", "10px sans-serif");
   
-  debugger
   const cell = svg
     .selectAll("g")
     .data(root.descendants())
@@ -86,4 +85,3 @@ chart = () => {
   return svg.node();
 };
 
-chart(data);
