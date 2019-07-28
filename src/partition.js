@@ -1,8 +1,8 @@
-// data = require('./data.json');
-// color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1));
-// format = d3.format(",d");
-// width = 975;
-// height = 1200;
+data = require('./data.json');
+color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1));
+format = d3.format(",d");
+width = 975;
+height = 1200;
 
 partition = data => {
   const root = d3.hierarchy(data)
@@ -13,11 +13,12 @@ partition = data => {
     (root);
 };
 
-chart = () => {
+// forked from: https: //observablehq.com/@d3/zoomable-icicle
+// chart = () => {
   const root = partition(data);
   let focus = root;
   
-  const svg = d3.create("svg")
+  const svg = d3.select("body").append("svg")
   .attr("viewBox", [0, 0, width, height])
   .style("font", "10px sans-serif");
   
@@ -55,7 +56,7 @@ chart = () => {
 
   cell.append("title")
     .text(d => `${d.ancestors().map(d => d.data.name).reverse().join("/")}\n${format(d.value)}`);
-
+//
   function clicked(p) {
     focus = focus === p ? p = p.parent : p;
 
@@ -81,7 +82,6 @@ chart = () => {
   function labelVisible(d) {
     return d.y1 <= width && d.y0 >= 0 && d.x1 - d.x0 > 16;
   }
-
-  return svg.node();
-};
+  // return svg.node();
+// };
 
