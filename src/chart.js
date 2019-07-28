@@ -1,5 +1,5 @@
 // forked from: https: //observablehq.com/@d3/zoomable-icicle
-data = require('./data.json');
+data = require('../data/sample_data.json');
 color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1));
 format = d3.format(",d");
 width = 975;
