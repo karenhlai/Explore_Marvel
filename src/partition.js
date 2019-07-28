@@ -1,4 +1,8 @@
-import data from './sample_data';
+data = require('./data.json');
+color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1));
+format = d3.format(",d");
+width = 975;
+height = 1200;
 
 partition = data => {
   const root = d3.hierarchy(data)
@@ -7,16 +11,17 @@ partition = data => {
   return d3.partition()
     .size([height, (root.height + 1) * width / 3])
     (root);
-}
+};
 
-chart = {
+chart = () => {
   const root = partition(data);
   let focus = root;
-
+  
   const svg = d3.create("svg")
-    .attr("viewBox", [0, 0, width, height])
-    .style("font", "10px sans-serif");
-
+  .attr("viewBox", [0, 0, width, height])
+  .style("font", "10px sans-serif");
+  
+  debugger
   const cell = svg
     .selectAll("g")
     .data(root.descendants())
@@ -43,14 +48,14 @@ chart = {
     .attr("fill-opacity", d => +labelVisible(d));
 
   text.append("tspan")
-  .text(d => d.data.name);
+    .text(d => d.data.name);
 
   const tspan = text.append("tspan")
     .attr("fill-opacity", d => labelVisible(d) * 0.7)
     .text(d => ` ${format(d.value)}`);
 
   cell.append("title")
-  .text(d => `${d.ancestors().map(d => d.data.name).reverse().join("/")}\n${format(d.value)}`);
+    .text(d => `${d.ancestors().map(d => d.data.name).reverse().join("/")}\n${format(d.value)}`);
 
   function clicked(p) {
     focus = focus === p ? p = p.parent : p;
@@ -79,8 +84,6 @@ chart = {
   }
 
   return svg.node();
-}
+};
 
-color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1))
-
-format = d3.format(",d")
+chart(data);
