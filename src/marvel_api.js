@@ -4,6 +4,7 @@ const fetch = require('node-fetch');
 
 
 
+
 let hash = CryptoJS.MD5(`${key.ts}${key.privateKey}${key.publicKey}`);
 let myData = [];
 
@@ -14,6 +15,7 @@ function filterEvents(json) {
         ['name']: event.title, 
         // ['description']: event.description,
         ['children']: [],
+        ['thumbnails']: event.thumbnail
       }
     )
   );
@@ -21,13 +23,18 @@ function filterEvents(json) {
 };
 
 function appendCharactersToEvents(json) {
-  
-}
+  Object.values(json.data.results).forEach((event) => {
+    // console.log(event.characters.items)
+    event.characters.items.forEach(characters =>
+      console.log(characters.name)
+    )
+  })
+};
 
 
-fetch(`http://gateway.marvel.com/v1/public/events?limit=3&ts=${key.ts}&apikey=${key.publicKey}&hash=${hash}`)
+fetch(`http://gateway.marvel.com/v1/public/events?limit=1&ts=${key.ts}&apikey=${key.publicKey}&hash=${hash}`)
   .then(res => res.json())
-  .then(myJson => filterEvents(myJson))
-  .then(myJson => console.log(myJson))
+  // .then(myJson => filterEvents(myJson))
+  .then(myJson => appendCharactersToEvents(myJson))
   .catch(err => console.log(err));
 
