@@ -10,22 +10,23 @@ let myData = [];
 
 function filterEvents(json) {
   Object.values(json.data.results).forEach((event) => {
-    myData.push(
-      {
-        ['name']: event.title, 
-        // ['description']: event.description,
-        ['children']: [event.characters.items],
-        // ['thumbnails']: event.thumbnail
-      }
-    )
+    myData.push({
+      ['name']: event.title,
+      // ['description']: event.description,
+      // ['thumbnails']: event.thumbnail
+      ['children']: event.characters.items,
+    });
+    // event.characters.items.forEach((character) => 
+    // );
   });
+  console.log(myData)
+  console.log(myData[1].children)
   return myData;
 };
 
 
-fetch(`http://gateway.marvel.com/v1/public/events?limit=1&ts=${key.ts}&apikey=${key.publicKey}&hash=${hash}`)
+fetch(`http://gateway.marvel.com/v1/public/events?limit=2&offset=2&ts=${key.ts}&apikey=${key.publicKey}&hash=${hash}`)
   .then(res => res.json())
   .then(myJson => filterEvents(myJson))
-  // .then(myJson => appendCharactersToEvents(myJson))
   .catch(err => console.log(err));
 
