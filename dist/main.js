@@ -86,17 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./config/dev_keys.js":
-/*!****************************!*\
-  !*** ./config/dev_keys.js ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = {\n  publicKey: '5bb20da87b09c9516bd86c9c5d2bcdad',\n  privateKey: '54bb3c8fc2734c8a92ca99cd532c76bb63a85c24',\n  ts: Date.now()\n};\n\n//# sourceURL=webpack:///./config/dev_keys.js?");
-
-/***/ }),
-
 /***/ "./data/sample_data.json":
 /*!*******************************!*\
   !*** ./data/sample_data.json ***!
@@ -546,7 +535,7 @@ eval("// forked from: https: //observablehq.com/@d3/zoomable-icicle\ndata = __we
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _chart__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./chart */ \"./src/chart.js\");\n/* harmony import */ var _chart__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_chart__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _marvel_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./marvel_api */ \"./src/marvel_api.js\");\n\n\n\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  \n});\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _chart__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./chart */ \"./src/chart.js\");\n/* harmony import */ var _chart__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_chart__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _marvel_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./marvel_api */ \"./src/marvel_api.js\");\n/* harmony import */ var _marvel_api__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_marvel_api__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  \n});\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -554,11 +543,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var loda
 /*!***************************!*\
   !*** ./src/marvel_api.js ***!
   \***************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _config_dev_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config/dev_keys */ \"./config/dev_keys.js\");\n/* harmony import */ var _config_dev_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_config_dev_keys__WEBPACK_IMPORTED_MODULE_0__);\nvar CryptoJS = __webpack_require__(/*! crypto-js */ \"./node_modules/crypto-js/index.js\");\nconst fetch = __webpack_require__(/*! node-fetch */ \"./node_modules/node-fetch/browser.js\");\n\n\nlet hash = CryptoJS.MD5(`${_config_dev_keys__WEBPACK_IMPORTED_MODULE_0___default.a.ts}${_config_dev_keys__WEBPACK_IMPORTED_MODULE_0___default.a.privateKey}${_config_dev_keys__WEBPACK_IMPORTED_MODULE_0___default.a.publicKey}`);\nlet marvel_data = {};\n\nfetch(`http://gateway.marvel.com/v1/public/characters?limit=3&ts=${_config_dev_keys__WEBPACK_IMPORTED_MODULE_0___default.a.ts}&apikey=5bb20da87b09c9516bd86c9c5d2bcdad&hash=${hash}`)\n  .then(res => res.json())\n  // .then(myJson => filterCharacters(myJson))\n  .then(myJson => console.log(myJson))\n  .catch(err => console.log(err));\n\n\n\n//# sourceURL=webpack:///./src/marvel_api.js?");
+eval("var CryptoJS = __webpack_require__(/*! crypto-js */ \"./node_modules/crypto-js/index.js\");\nconst fetch = __webpack_require__(/*! node-fetch */ \"./node_modules/node-fetch/browser.js\");\n// import key from '../config/dev_keys';\n\n\nlet hash = CryptoJS.MD5(`${key.ts}${key.privateKey}${key.publicKey}`);\nlet myData = [];\n\nfunction filterEvents(json) {\n  let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');\n\n  Object.values(json.data.results).forEach((event, idx) => {\n    myData.push(\n      {\n        ['id']: idx, \n        ['title']: event.title, \n        ['description']: event.description\n      }\n    );\n    // event.characters.items.forEach((character, jdx) => {\n    //   myData.nodes.push(\n    //     {\n    //       ['charId']: jdx, \n    //       ['title']: character.name\n    //     }\n    //   );\n    // })\n  });\n  return myData;\n};\n\nfetch(`http://gateway.marvel.com/v1/public/events?limit=3&ts=${key.ts}&apikey=${key.publicKey}&hash=${hash}`)\n  .then(res => res.json())\n  .then(myJson => filterEvents(myJson))\n  .then(myJson => console.log(myJson))\n  .catch(err => console.log(err));\n\n\n\n//# sourceURL=webpack:///./src/marvel_api.js?");
 
 /***/ })
 
