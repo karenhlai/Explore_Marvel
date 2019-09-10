@@ -1,9 +1,6 @@
 var CryptoJS = require("crypto-js");
 const fetch = require('node-fetch');
-// import key from '../config/dev_keys';
-
-
-
+const key = require('../config/dev_keys');
 
 let hash = CryptoJS.MD5(`${key.ts}${key.privateKey}${key.publicKey}`);
 let myData = [];

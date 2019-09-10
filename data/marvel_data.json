@@ -1,69 +1,49 @@
 {
-   "name": "Marvel Data",
-   "children": [
-     {
+  "name": "Marvel Data",
+  "children": [
+    {
       "name": "Acts of Vengeance!",
       "children": [
         {
-          "name": "Alicia Masters",
-          "value": 319
+          "name": "Alicia Masters"
         }, {
-          "name": "Alpha Flight",
-          "value": 319
+          "name": "Alpha Flight"
         }, {
-          "name": "Ancient One",
-          "value": 319
+          "name": "Ancient One"
         }, {
-          "name": "Apocalypse",
-          "value": 319
+          "name": "Apocalypse"
         }, {
-          "name": "Archangel",
-          "value": 319
+          "name": "Archangel"
         }, {
-          "name": "Avengers",
-          "value": 319
+          "name": "Avengers"
         }, {
-          "name": "Banshee",
-          "value": 319
+          "name": "Banshee"
         }, {
-          "name": "Beast",
-          "value": 319
+          "name": "Beast"
         }, {
-          "name": "Beetle (Abner Jenkins)",
-          "value": 319
+          "name": "Beetle (Abner Jenkins)"
         }, {
-          "name": "Ben Grimm",
-          "value": 319
+          "name": "Ben Grimm"
         }, {
-          "name": "Black Knight (Sir Percy of Scandia)",
-          "value": 319
+          "name": "Black Knight (Sir Percy of Scandia)"
         }, {
-          "name": "Black Widow",
-          "value": 319
+          "name": "Black Widow"
         }, {
-          "name": "Boom Boom",
-          "value": 319
+          "name": "Boom Boom"
         }, {
-          "name": "Bruce Banner",
-          "value": 319
+          "name": "Bruce Banner"
         }, {
-          "name": "Bushwacker",
-          "value": 319
+          "name": "Bushwacker"
         }, {
-          "name": "Captain America",
-          "value": 319
+          "name": "Captain America"
         }, {
-          "name": "Captain Universe",
-          "value": 319
+          "name": "Captain Universe"
         }, {
-          "name": "Chameleon",
-          "value": 319
+          "name": "Chameleon"
         }, {
-          "name": "Clea",
-          "value": 319
+          "name": "Clea"
         }, {
-          "name": "Colossus",
-          "value": 319
+          "name": "Colossus"
         }
       ]
     }, 
@@ -71,65 +51,45 @@
       "name": "Age of Apocalypse",
       "children": [
         {
-          "name": "Abyss",
-          "value": 743
+          "name": "Abyss"
         }, {
-          "name": "Abyss (Age of Apocalypse)",
-          "value": 743
+          "name": "Abyss (Age of Apocalypse)"
         }, {
-          "name": "Angel (Warren Worthington III)",
-          "value": 743
+          "name": "Angel (Warren Worthington III)"
         }, {
-          "name": "Apocalypse",
-          "value": 743
+          "name": "Apocalypse"
         }, {
-          "name": "Arcade",
-          "value": 743
+          "name": "Arcade"
         }, {
-          "name": "Archangel",
-          "value": 743
+          "name": "Archangel"
         }, {
-          "name": "Aurora",
-          "value": 743
+          "name": "Aurora"
         }, {
-          "name": "Banshee",
-          "value": 743
+          "name": "Banshee"
         }, {
-          "name": "Banshee (Theresa Rourke)",
-          "value": 743
+          "name": "Banshee (Theresa Rourke)"
         }, {
-          "name": "Beast",
-          "value": 743
+          "name": "Beast"
         }, {
-          "name": "Bishop",
-          "value": 743
+          "name": "Bishop"
         }, {
-          "name": "Blink",
-          "value": 743
+          "name": "Blink"
         }, {
-          "name": "Blob",
-          "value": 743
+          "name": "Blob"
         }, {
-          "name": "Boomer",
-          "value": 743
+          "name": "Boomer"
         }, {
-          "name": "Brute",
-          "value": 743
+          "name": "Brute"
         }, {
-          "name": "Cable",
-          "value": 743
+          "name": "Cable"
         }, {
-          "name": "Callisto (Age of Apocalypse)",
-          "value": 743
+          "name": "Callisto (Age of Apocalypse)"
         }, {
-          "name": "Cannonball",
-          "value": 743
+          "name": "Cannonball"
         }, {
-          "name": "Captain Britain",
-          "value": 743
+          "name": "Captain Britain"
         }, {
-          "name": "Carol Danvers",
-          "value": 743
+          "name": "Carol Danvers"
         }
       ]
     },
@@ -137,47 +97,33 @@
       "name": "Age of Ultron",
       "children": [
         {
-          "name": "Avengers",
-          "value": 743
+          "name": "Avengers"
         }, {
-          "name": "Black Widow",
-          "value": 743
+          "name": "Black Widow"
         }, {
-          "name": "Captain America",
-          "value": 743
+          "name": "Captain America"
         }, {
-          "name": "Doctor Doom",
-          "value": 743
+          "name": "Doctor Doom"
         }, {
-          "name": "Hawkeye",
-          "value": 743
+          "name": "Hawkeye"
         }, {
-          "name": "Kang",
-          "value": 743
+          "name": "Kang"
         }, {
-          "name": "Luke Cage",
-          "value": 743
+          "name": "Luke Cage"
         }, {
-          "name": "Moon Knight",
-          "value": 743
+          "name": "Moon Knight"
         }, {
-          "name": "She-Hulk (Jennifer Walters)",
-          "value": 743
+          "name": "She-Hulk (Jennifer Walters)"
         }, {
-          "name": "Spider-Man",
-          "value": 743
+          "name": "Spider-Man"
         }, {
-          "name": "Ultron",
-          "value": 743
+          "name": "Ultron"
         }, {
-          "name": "Vision",
-          "value": 743
+          "name": "Vision"
         }, {
-          "name": "Wolverine",
-          "value": 743
+          "name": "Wolverine"
         }, {
-          "name": "X-Men",
-          "value": 743
+          "name": "X-Men"
         }
       ]
     }, 
@@ -185,65 +131,45 @@
       "name": "Age of X",
       "children": [
         {
-          "name": "Arcade",
-          "value": 743
+          "name": "Arcade"
         }, {
-          "name": "Avalanche",
-          "value": 743
+          "name": "Avalanche"
         }, {
-          "name": "Avengers",
-          "value": 743
+          "name": "Avengers"
         }, {
-          "name": "Beast",
-          "value": 743
+          "name": "Beast"
         }, {
-          "name": "Blob",
-          "value": 743
+          "name": "Blob"
         }, {
-          "name": "Cannonball",
-          "value": 743
+          "name": "Cannonball"
         }, {
-          "name": "Captain America",
-          "value": 743
+          "name": "Captain America"
         }, {
-          "name": "Cecilia Reyes",
-          "value": 743
+          "name": "Cecilia Reyes"
         }, {
-          "name": "Chamber",
-          "value": 743
+          "name": "Chamber"
         }, {
-          "name": "Colossus",
-          "value": 743
+          "name": "Colossus"
         }, {
-          "name": "Cyclops",
-          "value": 743
+          "name": "Cyclops"
         }, {
-          "name": "Dazzler",
-          "value": 743
+          "name": "Dazzler"
         }, {
-          "name": "Domino",
-          "value": 743
+          "name": "Domino"
         }, {
-          "name": "Emma Frost",
-          "value": 743
+          "name": "Emma Frost"
         }, {
-          "name": "Frank Castle",
-          "value": 743
+          "name": "Frank Castle"
         }, {
-          "name": "Gambit",
-          "value": 743
+          "name": "Gambit"
         }, {
-          "name": "Ghost Rider (Johnny Blaze)",
-          "value": 743
+          "name": "Ghost Rider (Johnny Blaze)"
         }, {
-          "name": "Havok",
-          "value": 743
+          "name": "Havok"
         }, {
-          "name": "Hellion",
-          "value": 743
+          "name": "Hellion"
         }, {
-          "name": "Hulk",
-          "value": 743
+          "name": "Hulk"
         }
       ]
     }
