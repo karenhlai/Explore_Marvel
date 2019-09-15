@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     
     const $input = $("#heroName");
     const selectedHero = $input.val();
-    // console.log(selectedHero);
+    const $ul = $("ul");
 
     for (let i = 0; i < data.length; i++) {
       let hero = data[i]; 
@@ -31,6 +31,12 @@ document.addEventListener('DOMContentLoaded', (e) => {
         compareHeros.push(hero.name);
         compareApps.push(hero.appearances);
         document.getElementById(hero.name).disabled = true;
+
+        // add label
+        const $li = $("<li></li>");
+        $li.text(hero.name);
+        $li.attr("id", `${hero.name} Label`);
+        $ul.append($li);
       }
     }
     updateChart(compareApps, compareHeros);

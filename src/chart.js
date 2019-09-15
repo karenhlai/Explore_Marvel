@@ -31,14 +31,11 @@
      .on("click", function (e, i) {
        const reAddHero = compareHeros[i];
        document.getElementById(reAddHero).disabled = false;
-
+       document.getElementById(reAddHero + " Label").remove();
+      
        comparisonData.splice(i, 1);
-       console.log(comparisonData)
-       console.log(compareHeros)
-       updateChart(comparisonData)
-     })
-     .append("div").attr("class", "x-axis")
-      .text(compareHeros[i]);
+       updateChart(comparisonData);
+     });
 
    // then selected item is removed, and update graph will show
    // exit() leaving old data behind
