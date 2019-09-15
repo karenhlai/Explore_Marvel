@@ -12,9 +12,12 @@ document.addEventListener('DOMContentLoaded', (e) => {
     option.id = hero.name;
     dropdown.append(option);
   }
+
+  // auto select 
+  
   
   let compareHeros = [];
-  let compareApps = [];
+  let compareMovies = [];
 
   // add selectedHeros to array
   $("#selectHero").on("submit", (e) => {
@@ -29,7 +32,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
       if (hero.name === selectedHero) {
         compareHeros.push(hero.name);
-        compareApps.push(hero.appearances);
+        compareMovies.push(hero.movies);
         document.getElementById(hero.name).disabled = true;
 
         // add label
@@ -39,7 +42,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         $ul.append($li);
       }
     }
-    updateChart(compareApps, compareHeros);
+    updateChart(compareMovies, compareHeros);
   });
   
 });

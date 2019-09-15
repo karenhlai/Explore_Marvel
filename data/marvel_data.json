@@ -1,41 +1,53 @@
 [{
     "name": "Iron Man",
-    "appearances": 100
+    "movies": 100, 
+    "comics": 30
   },
   {
     "name": "Captain America",
-    "appearances": 90
+    "movies": 90, 
+    "comics": 60
   },
   {
     "name": "Hulk",
-    "appearances": 80
+    "movies": 80, 
+    "comics": 20
   },
   {
     "name": "Thor",
-    "appearances": 70
+    "movies": 70, 
+    "comics": 40
   },
   {
     "name": "Black Widow",
-    "appearances": 60
+    "movies": 60, 
+    "comics": 10
   },
   {
     "name": "Dr. Strange",
-    "appearances": 65
+    "movies": 65, 
+    "comics": 70
   },
   {
     "name": "Scarlet Witch",
-    "appearances": 100
+    "movies": 100, 
+    "comics": 35
   },
   {
     "name": "Black Panther",
-    "appearances": 150
+    "movies": 150, 
+    "comics": 25
   },
   {
     "name": "Captain Marvel",
-    "appearances": 200
+    "movies": 200, 
+    "comics": 32
   },
   {
     "name": "Hawkeye",
-    "appearances": 50
+    "movies": 50, 
+    "comics": 42
   }
 ]
+
+
