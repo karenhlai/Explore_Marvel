@@ -4,26 +4,24 @@
 <head>
   <title>Explore Marvel</title>
   <link rel="icon" type="image/png" href="../assets/images/Iron_Man-512.png" sizes="16x16">
-  <!-- <link rel="stylesheet" href="../assets/stylesheets/style.css">  -->
-  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <link rel="stylesheet" href="../assets/stylesheets/style.css"> 
 </head>
 
 <body>
-  <script src="main.js"></script>
+  <div class="container">
+    <div id="chart">
+    </div>
 
-  <form id="findCharacter">
-    <fieldset>
-      <legend>Find a superhero:</legend>
-      <label for="city">Hero Name:</label>
-      <input type="text" name="heroName" id="heroName">
-      <input type="submit" id="submit">
-    </fieldset>
-
-  </form>
-  <span>Hero</span>
-  <p>Name: <span id="name"></span></p>
-  <p>Description: <span id="description"></span></p>
+    <form id="selectHero">
+      <label>Select a superhero:</label>
+      <select name="heroName" id="heroName"></select>
+      <input type="submit">
+    </form>
+  </div>
+    
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="./main.js"></script>
 </body>
  
-</html>
 </html>
