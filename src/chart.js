@@ -1,88 +1,48 @@
-// // forked from: https: //observablehq.com/@d3/zoomable-icicle
-// // data = require('../data/sample_data.json');
-// data = require('../data/marvel_data.json');
-// color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1));
-// format = d3.format(",d");
-// width = 975;
-// height = 1200;
+ //d3
+ export function updateChart(comparisonData, compareHeros) {
+   // handle static data
+   const selection = d3.select("#chart")
+     .selectAll(".bar")
+     .data(comparisonData)
+     // old data scraped, style new data
+     .style("height", function (d) {
+       return d + "px";
+     })
+     .style("margin-top", function (d) {
+       return (100 - d) + "px";
+     });
 
-// partition = data => {
-//   const root = d3.hierarchy(data)
-//     .sum(d => d.value)
-//     .sort((a, b) => b.height - a.height || b.value - a.value);
-//   return d3.partition()
-//     .size([height, (root.height + 1) * width / 3])
-//     (root);
-// };
+   // handle dynamic data - enter (new data), old date is updated
+   /* When our dataset contains more items than there are avai. DOM els, the 
+   surplus data items are stored in a subset of this selection 
+   called the 'enter' selection - CHAIRS METAPHOR - First 4 are Update, Last is Enter */
+   selection.enter()
+     .append("div").attr("class", "bar")
+     .text((d) => d)
+    //  STYLE THE NUMBER TEXTS
+     .style("height", function (d) {
+       return d + "px";
+     })
+     .style("margin-top", function (d) {
+       return (100 - d) + "px";
+     })
 
-// // chart = () => {
-//   const root = partition(data);
-//   let focus = root;
-  
-//   const svg = d3.select("body").append("svg")
-//   .attr("viewBox", [0, 0, width, height])
-//   .style("font", "10px sans-serif");
-  
-//   const cell = svg
-//     .selectAll("g")
-//     .data(root.descendants())
-//     .join("g")
-//     .attr("transform", d => `translate(${d.y0},${d.x0})`);
+     // handle click to remove - new graph is entered,
+     .on("click", function (e, i) {
+       const reAddHero = compareHeros[i];
+       document.getElementById(reAddHero).disabled = false;
 
-//   const rect = cell.append("rect")
-//     .attr("width", d => d.y1 - d.y0 - 1)
-//     .attr("height", d => rectHeight(d))
-//     .attr("fill-opacity", 0.6)
-//     .attr("fill", d => {
-//       if (!d.depth) return "#ccc";
-//       while (d.depth > 1) d = d.parent;
-//       return color(d.data.name);
-//     })
-//     .style("cursor", "pointer")
-//     .on("click", clicked);
+       comparisonData.splice(i, 1);
+       console.log(comparisonData)
+       console.log(compareHeros)
+       updateChart(comparisonData)
+     })
+     .append("div").attr("class", "x-axis")
+      .text(compareHeros[i]);
 
-//   const text = cell.append("text")
-//     .style("user-select", "none")
-//     .attr("pointer-events", "none")
-//     .attr("x", 4)
-//     .attr("y", 13)
-//     .attr("fill-opacity", d => +labelVisible(d));
+   // then selected item is removed, and update graph will show
+   // exit() leaving old data behind
+   // remove() remove old dataset
 
-//   text.append("tspan")
-//     .text(d => d.data.name);
-
-//   const tspan = text.append("tspan")
-//     .attr("fill-opacity", d => labelVisible(d) * 0.7)
-//     .text(d => ` ${format(d.value)}`);
-
-//   cell.append("title")
-//     .text(d => `${d.ancestors().map(d => d.data.name).reverse().join("/")}\n${format(d.value)}`);
-// //
-//   function clicked(p) {
-//     focus = focus === p ? p = p.parent : p;
-
-//     root.each(d => d.target = {
-//       x0: (d.x0 - p.x0) / (p.x1 - p.x0) * height,
-//       x1: (d.x1 - p.x0) / (p.x1 - p.x0) * height,
-//       y0: d.y0 - p.y0,
-//       y1: d.y1 - p.y0
-//     });
-
-//     const t = cell.transition().duration(750)
-//       .attr("transform", d => `translate(${d.target.y0},${d.target.x0})`);
-
-//     rect.transition(t).attr("height", d => rectHeight(d.target));
-//     text.transition(t).attr("fill-opacity", d => +labelVisible(d.target));
-//     tspan.transition(t).attr("fill-opacity", d => labelVisible(d.target) * 0.7);
-//   }
-
-//   function rectHeight(d) {
-//     return d.x1 - d.x0 - Math.min(1, (d.x1 - d.x0) / 2);
-//   }
-
-//   function labelVisible(d) {
-//     return d.y1 <= width && d.y0 >= 0 && d.x1 - d.x0 > 16;
-//   }
-//   // return svg.node();
-// // };
-
+   selection.exit().remove();
+ };

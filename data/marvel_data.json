@@ -1,177 +1,41 @@
-{
-  "name": "Marvel Data",
-  "children": [
-    {
-      "name": "Acts of Vengeance!",
-      "children": [
-        {
-          "name": "Alicia Masters"
-        }, {
-          "name": "Alpha Flight"
-        }, {
-          "name": "Ancient One"
-        }, {
-          "name": "Apocalypse"
-        }, {
-          "name": "Archangel"
-        }, {
-          "name": "Avengers"
-        }, {
-          "name": "Banshee"
-        }, {
-          "name": "Beast"
-        }, {
-          "name": "Beetle (Abner Jenkins)"
-        }, {
-          "name": "Ben Grimm"
-        }, {
-          "name": "Black Knight (Sir Percy of Scandia)"
-        }, {
-          "name": "Black Widow"
-        }, {
-          "name": "Boom Boom"
-        }, {
-          "name": "Bruce Banner"
-        }, {
-          "name": "Bushwacker"
-        }, {
-          "name": "Captain America"
-        }, {
-          "name": "Captain Universe"
-        }, {
-          "name": "Chameleon"
-        }, {
-          "name": "Clea"
-        }, {
-          "name": "Colossus"
-        }
-      ]
-    }, 
-    {
-      "name": "Age of Apocalypse",
-      "children": [
-        {
-          "name": "Abyss"
-        }, {
-          "name": "Abyss (Age of Apocalypse)"
-        }, {
-          "name": "Angel (Warren Worthington III)"
-        }, {
-          "name": "Apocalypse"
-        }, {
-          "name": "Arcade"
-        }, {
-          "name": "Archangel"
-        }, {
-          "name": "Aurora"
-        }, {
-          "name": "Banshee"
-        }, {
-          "name": "Banshee (Theresa Rourke)"
-        }, {
-          "name": "Beast"
-        }, {
-          "name": "Bishop"
-        }, {
-          "name": "Blink"
-        }, {
-          "name": "Blob"
-        }, {
-          "name": "Boomer"
-        }, {
-          "name": "Brute"
-        }, {
-          "name": "Cable"
-        }, {
-          "name": "Callisto (Age of Apocalypse)"
-        }, {
-          "name": "Cannonball"
-        }, {
-          "name": "Captain Britain"
-        }, {
-          "name": "Carol Danvers"
-        }
-      ]
-    },
-    {
-      "name": "Age of Ultron",
-      "children": [
-        {
-          "name": "Avengers"
-        }, {
-          "name": "Black Widow"
-        }, {
-          "name": "Captain America"
-        }, {
-          "name": "Doctor Doom"
-        }, {
-          "name": "Hawkeye"
-        }, {
-          "name": "Kang"
-        }, {
-          "name": "Luke Cage"
-        }, {
-          "name": "Moon Knight"
-        }, {
-          "name": "She-Hulk (Jennifer Walters)"
-        }, {
-          "name": "Spider-Man"
-        }, {
-          "name": "Ultron"
-        }, {
-          "name": "Vision"
-        }, {
-          "name": "Wolverine"
-        }, {
-          "name": "X-Men"
-        }
-      ]
-    }, 
-    {
-      "name": "Age of X",
-      "children": [
-        {
-          "name": "Arcade"
-        }, {
-          "name": "Avalanche"
-        }, {
-          "name": "Avengers"
-        }, {
-          "name": "Beast"
-        }, {
-          "name": "Blob"
-        }, {
-          "name": "Cannonball"
-        }, {
-          "name": "Captain America"
-        }, {
-          "name": "Cecilia Reyes"
-        }, {
-          "name": "Chamber"
-        }, {
-          "name": "Colossus"
-        }, {
-          "name": "Cyclops"
-        }, {
-          "name": "Dazzler"
-        }, {
-          "name": "Domino"
-        }, {
-          "name": "Emma Frost"
-        }, {
-          "name": "Frank Castle"
-        }, {
-          "name": "Gambit"
-        }, {
-          "name": "Ghost Rider (Johnny Blaze)"
-        }, {
-          "name": "Havok"
-        }, {
-          "name": "Hellion"
-        }, {
-          "name": "Hulk"
-        }
-      ]
-    }
-  ]
-}
+[{
+    "name": "Iron Man",
+    "appearances": 100
+  },
+  {
+    "name": "Captain America",
+    "appearances": 90
+  },
+  {
+    "name": "Hulk",
+    "appearances": 80
+  },
+  {
+    "name": "Thor",
+    "appearances": 70
+  },
+  {
+    "name": "Black Widow",
+    "appearances": 60
+  },
+  {
+    "name": "Dr. Strange",
+    "appearances": 65
+  },
+  {
+    "name": "Scarlet Witch",
+    "appearances": 100
+  },
+  {
+    "name": "Black Panther",
+    "appearances": 150
+  },
+  {
+    "name": "Captain Marvel",
+    "appearances": 200
+  },
+  {
+    "name": "Hawkeye",
+    "appearances": 50
+  }
+]

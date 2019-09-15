@@ -1,36 +1,39 @@
-// import _ from 'lodash';
-// import chart from './chart';
-// import marvel_api from "./marvel_api";
-var CryptoJS = require("crypto-js");
-const key = require('../config/dev_keys');
-
-let hash = CryptoJS.MD5(`${key.ts}${key.privateKey}${key.publicKey}`);
+import _ from 'lodash';
+import { updateChart } from './chart';
+import data from '../data/marvel_data'
 
 document.addEventListener('DOMContentLoaded', (e) => {
-  let req = new XMLHttpRequest();
-  var name = document.getElementById('heroName').value;
-  debugger
-  let web = `http://gateway.marvel.com/v1/public/characters?name=${name}&ts=${key.ts}&apikey=${key.publicKey}&hash=${hash}`;
+  // add heroNames to dropdown list
+  let dropdown = document.getElementById("heroName");
+  for (let i = 0; i < data.length; i++) {
+    let hero = data[i];
+    let option = document.createElement("option");
+    option.text = hero.name;
+    option.id = hero.name;
+    dropdown.append(option);
+  }
   
-  document.getElementById('submit').addEventListener('click', (e) => {
-    document.getElementById('heroName').textContent = "" ; 
-    document.getElementById('description').textContent = "" ;
-  });
-  
-  req.open('GET', web, true);
-  
-  
-  req.setRequestHeader('Content-Type', 'application/json');
-  req.addEventListener('load', function () {
-    if (req.status >= 200 && req.status < 400) {
-      let result = JSON.parse(req.responseText);
-      debugger
-      document.getElementById('name').textContent = result.name;
-      document.getElementById('description').textContent = result.description;
-    }
+  let compareHeros = [];
+  let compareApps = [];
 
+  // add selectedHeros to array
+  $("#selectHero").on("submit", (e) => {
     e.preventDefault();
-  });
+    
+    const $input = $("#heroName");
+    const selectedHero = $input.val();
+    // console.log(selectedHero);
 
-  req.send(null);
+    for (let i = 0; i < data.length; i++) {
+      let hero = data[i]; 
+
+      if (hero.name === selectedHero) {
+        compareHeros.push(hero.name);
+        compareApps.push(hero.appearances);
+        document.getElementById(hero.name).disabled = true;
+      }
+    }
+    updateChart(compareApps, compareHeros);
+  });
+  
 });
