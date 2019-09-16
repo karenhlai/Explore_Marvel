@@ -1,45 +1,87 @@
- //d3
- export function updateChart(comparisonData, compareHeros) {
-   // handle static data
-   const selection = d3.select("#chart")
-     .selectAll(".bar")
-     .data(comparisonData)
-     // old data scraped, style new data
-     .style("height", function (d) {
-       return d + "px";
-     })
-     .style("margin-top", function (d) {
-       return (100 - d) + "px";
-     });
+export function updateChart(selectedHeros, selectedCategory) {
+  if (selectedCategory === "movies") {
+    const selection = d3.select("#chart")
+    .selectAll(".bar")
+    .data(selectedHeros)
+    // old data scraped, style new data
+    .style("height", function (d) {
+      console.log(d.name)
+      return d.movies + "px";
+    })
+    .style("margin-top", function (d) {
+      return (100 - d.movies) + "px";
+    });
 
-   // handle dynamic data - enter (new data), old date is updated
-   /* When our dataset contains more items than there are avai. DOM els, the 
-   surplus data items are stored in a subset of this selection 
-   called the 'enter' selection - CHAIRS METAPHOR - First 4 are Update, Last is Enter */
-   selection.enter()
-     .append("div").attr("class", "bar")
-     .text((d) => d)
+  // handle dynamic data - enter (new data), old date is updated
+  /* When our dataset contains more items than there are avai. DOM els, the 
+  surplus data items are stored in a subset of this selection 
+  called the 'enter' selection - CHAIRS METAPHOR - First 4 are Update, Last is Enter */
+  selection.enter()
+    .append("div").attr("class", "bar")
+    .text((d) => d.movies)
     //  STYLE THE NUMBER TEXTS
-     .style("height", function (d) {
-       return d + "px";
-     })
-     .style("margin-top", function (d) {
-       return (100 - d) + "px";
-     })
+    .style("height", function (d) {
+      return d.movies + "px";
+    })
+    .style("margin-top", function (d) {
+      return (100 - d.movies) + "px";
+    })
 
-     // handle click to remove - new graph is entered,
-     .on("click", function (e, i) {
-       const reAddHero = compareHeros[i];
-       document.getElementById(reAddHero).disabled = false;
-       document.getElementById(reAddHero + " Label").remove();
-      
-       comparisonData.splice(i, 1);
-       updateChart(comparisonData);
-     });
+    // handle click to remove - new graph is entered,
+    .on("click", function (e, i) {
+      const enableHero = e.name;
+      document.getElementById(enableHero).disabled = false;
+      document.getElementById(enableHero + " Label").remove();
 
-   // then selected item is removed, and update graph will show
-   // exit() leaving old data behind
-   // remove() remove old dataset
+      let updatedHeros = selectedHeros.splice(i, 1);
+      updateChart(updatedHeros, selectedCategory);
+    });
 
-   selection.exit().remove();
- };
+  // then selected item is removed, and update graph will show
+  // exit() leaving old data behind
+  // remove() remove old dataset
+  selection.exit().remove();
+  } else {
+    const selection= d3.select("#chart")
+    .selectAll(".bar")
+    .data(selectedHeros)
+    // old data scraped, style new data
+    .style("height", function (d) {
+      return d.comics + "px";
+    })
+    .style("margin-top", function (d) {
+      return (100 - d.comics) + "px";
+    });
+
+  // handle dynamic data - enter (new data), old date is updated
+  /* When our dataset contains more items than there are avai. DOM els, the 
+  surplus data items are stored in a subset of this selection 
+  called the 'enter' selection - CHAIRS METAPHOR - First 4 are Update, Last is Enter */
+  selection.enter()
+    .append("div").attr("class", "bar")
+    // .text((d) =>  d.comics)
+    //  STYLE THE NUMBER TEXTS
+    .style("height", function (d) {
+      return d.comics + "px";
+    })
+    .style("margin-top", function (d) {
+      return (100 - d.comics) + "px";
+    })
+
+    // handle click to remove - new graph is entered,
+    .on("click", function (e, i) {
+      let enableHero = e.name;
+      document.getElementById(enableHero).disabled = false;
+      document.getElementById(enableHero + " Label").remove();
+
+      let updatedHeros = selectedHeros.splice(i, 1);
+      updateChart(updatedHeros, selectedCategory);
+    });
+
+  // then selected item is removed, and update graph will show
+  // exit() leaving old data behind
+  // remove() remove old dataset
+
+  selection.exit().remove();
+  }
+};
