@@ -18,7 +18,7 @@ export function updateChart(selectedHeros, selectedCategory) {
   called the 'enter' selection - CHAIRS METAPHOR - First 4 are Update, Last is Enter */
   selection.enter()
     .append("div").attr("class", "bar")
-    .text((d) => d.movies)
+    // .text((d) => d.movies)
     //  STYLE THE NUMBER TEXTS
     .style("height", function (d) {
       return d.movies + "px";
