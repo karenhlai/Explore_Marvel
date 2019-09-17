@@ -1,7 +1,6 @@
 export function updateChart(selectedHeros, selectedCategory) {
   let reflected;
   reflected = selectedHeros;
-  let category = selectedCategory;
 
   if (selectedCategory === "movies") {
     const selection = d3.select("#chart")
@@ -37,7 +36,7 @@ export function updateChart(selectedHeros, selectedCategory) {
       document.getElementById(enableHero + " Label").remove();
 
       reflected.splice(i, 1);
-      category = "movies";
+      let category = "movies";
       updateChart(reflected, category);
     });
 
@@ -79,7 +78,7 @@ export function updateChart(selectedHeros, selectedCategory) {
       document.getElementById(enableHero + " Label").remove();
 
       reflected.splice(i, 1);
-      category = "comics"
+      let category = "comics"
       updateChart(reflected, category);
     });
 
