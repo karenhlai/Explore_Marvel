@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import { updateChart } from './chart';
 import data from '../data/marvel_data'
-import { arch } from 'os';
 
 document.addEventListener('DOMContentLoaded', (e) => {
   // add heroNames to dropdown list
@@ -37,37 +36,28 @@ document.addEventListener('DOMContentLoaded', (e) => {
         $ul.append($li);
       }
     }
-    // console.log(selectedCategory)
-    updateChart(selectedHeros, selectedCategory);
   };
 
     // place listener to each radio
     $("#moviesRadio").click(function () {
       $('#moviesRadio').attr("checked", true);
+      $('#comicsRadio').attr("checked", false);
       selectedCategory = "movies";
-      handleUpdate();
+      updateChart(selectedHeros, "movies");
     });
 
     $("#comicsRadio").click(function () {
       $('#comicsRadio').attr("checked", true);
+      $('#moviesRadio').attr("checked", false);
       selectedCategory = "comics";
-      handleUpdate();
-    });
-
-    $('input:radio').on('change', (e) => {
-      let selectedCategory = e.currentTarget.value;
-
-      if (selectedCategory === "movies") {
-        $('#comicsRadio').attr("checked", false);
-      } else if (selectedCategory === "comics") {
-        $('#moviesRadio').attr("checked", false);
-      }
+      updateChart(selectedHeros, "comics");
     });
 
   // add selectedHeros to array
   $("#selectHero").on("submit", (e) => {
     e.preventDefault();
     handleUpdate();
+    updateChart(selectedHeros, selectedCategory);
   });
   
 });

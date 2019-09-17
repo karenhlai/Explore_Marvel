@@ -1,11 +1,14 @@
 export function updateChart(selectedHeros, selectedCategory) {
+  let reflected;
+  reflected = selectedHeros;
+  let category = selectedCategory;
+
   if (selectedCategory === "movies") {
     const selection = d3.select("#chart")
     .selectAll(".bar")
     .data(selectedHeros)
     // old data scraped, style new data
     .style("height", function (d) {
-      console.log(d.name)
       return d.movies + "px";
     })
     .style("margin-top", function (d) {
@@ -33,8 +36,9 @@ export function updateChart(selectedHeros, selectedCategory) {
       document.getElementById(enableHero).disabled = false;
       document.getElementById(enableHero + " Label").remove();
 
-      let updatedHeros = selectedHeros.splice(i, 1);
-      updateChart(updatedHeros, selectedCategory);
+      reflected.splice(i, 1);
+      category = "movies";
+      updateChart(reflected, category);
     });
 
   // then selected item is removed, and update graph will show
@@ -74,8 +78,9 @@ export function updateChart(selectedHeros, selectedCategory) {
       document.getElementById(enableHero).disabled = false;
       document.getElementById(enableHero + " Label").remove();
 
-      let updatedHeros = selectedHeros.splice(i, 1);
-      updateChart(updatedHeros, selectedCategory);
+      reflected.splice(i, 1);
+      category = "comics"
+      updateChart(reflected, category);
     });
 
   // then selected item is removed, and update graph will show
@@ -84,4 +89,5 @@ export function updateChart(selectedHeros, selectedCategory) {
 
   selection.exit().remove();
   }
+  // updateChart(reflected)
 };
