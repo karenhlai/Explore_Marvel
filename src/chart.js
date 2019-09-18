@@ -1,6 +1,7 @@
 export function updateChart(selectedHeros, selectedCategory) {
   let reflected;
   reflected = selectedHeros;
+  let category = selectedCategory;
 
   if (selectedCategory === "movies") {
     const selection = d3.select("#chart")
@@ -28,7 +29,7 @@ export function updateChart(selectedHeros, selectedCategory) {
     .style("margin-top", function (d) {
       return (100 - d.movies) + "px";
     })
-
+    
     // handle click to remove - new graph is entered,
     .on("click", function (e, i) {
       const enableHero = e.name;
@@ -36,8 +37,8 @@ export function updateChart(selectedHeros, selectedCategory) {
       document.getElementById(enableHero + " Label").remove();
 
       reflected.splice(i, 1);
-      let category = "movies";
-      updateChart(reflected, category);
+      category = "movies";
+      updateChart(reflected, "movies");
     });
 
   // then selected item is removed, and update graph will show
@@ -78,8 +79,8 @@ export function updateChart(selectedHeros, selectedCategory) {
       document.getElementById(enableHero + " Label").remove();
 
       reflected.splice(i, 1);
-      let category = "comics"
-      updateChart(reflected, category);
+      category = "comics"
+      updateChart(reflected, "comics");
     });
 
   // then selected item is removed, and update graph will show
@@ -88,5 +89,5 @@ export function updateChart(selectedHeros, selectedCategory) {
 
   selection.exit().remove();
   }
-  // updateChart(reflected)
+  // updateChart(reflected, category)
 };
