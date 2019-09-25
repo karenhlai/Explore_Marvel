@@ -14,7 +14,6 @@ export function updateChart(selectedHeros, selectedCategory) {
     .style("margin-top", function (d) {
       return (100 - d.movies) + "px";
     });
-
   // handle dynamic data - enter (new data), old date is updated
   /* When our dataset contains more items than there are avai. DOM els, the 
   surplus data items are stored in a subset of this selection 
